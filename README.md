@@ -1,6 +1,6 @@
-# Fairy Tale Sequence
+# Lumi Website
 
-This repository contains the production-ready static website for **Fairy Tale Sequence**, a children's iPad fairy-tale sequence game. The landing page presents the app as **The World of Fable**, where children choose a fairy tale, enter story missions, arrange illustrated cards in the correct order, and unlock the next part of the adventure.
+This repository contains the production-ready static website for **Lumi: A journey through fables**, an educational storytelling game for children ages 4-12. The website presents Lumi as a magical game experience where children explore fairy-tale islands, repair stories broken by Lord Tempus, arrange illustrated cards in the correct order, and unlock chapters in a growing storybook.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript. There is no backend, no build step, and no framework dependency, so it is ready for GitHub Pages.
 
@@ -59,15 +59,13 @@ assets/images/island-forest.png
 
 GitHub Pages will publish the site from `index.html`.
 
-## App Store Placeholder
+## App Store Link
 
-The current App Store button points to:
+The App Store buttons point to:
 
 ```text
-https://apps.apple.com/
+https://apps.apple.com/us/app/lumi-a-journey-through-fables/id6773034104
 ```
-
-When the app is published, replace that placeholder URL in `index.html` with the final App Store product link.
 
 ## Contact
 
