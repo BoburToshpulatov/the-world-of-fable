@@ -1,6 +1,6 @@
 # Lumi Website
 
-This repository contains the production-ready static website for **Lumi: A journey through fables**, an educational storytelling game for children ages 4-12. The website presents Lumi as a magical game experience where children explore fairy-tale islands, repair stories broken by Lord Tempus, arrange illustrated cards in the correct order, and unlock chapters in a growing storybook.
+This repository contains the production-ready static website for **Lumi: world of fables**, an educational iPad storytelling game for children ages 4-10. The website presents Lumi as a magical game experience where children explore fairy-tale islands, repair stories broken by Lord Tempus, arrange illustrated cards in the correct order, and unlock chapters in a growing storybook.
 
 The site uses plain HTML, CSS, and a small amount of JavaScript. There is no backend, no build step, and no framework dependency, so it is ready for GitHub Pages.
 
@@ -45,9 +45,11 @@ Use these filenames so the website displays them automatically:
 ```text
 assets/images/island-world.png
 assets/images/island-forest.png
+assets/images/Lumi.jpeg
+assets/images/video.MOV
 ```
 
-`island-world.png` is used as the main hero visual. `island-forest.png` is used in the feature/gallery areas. If either file is missing, the website shows graceful visual fallbacks so the layout remains polished.
+`island-world.png` is used as the main hero visual. `island-forest.png` is used in the feature/gallery areas. `Lumi.jpeg` is used as the header logo. `video.MOV` is used for the classroom video section. If key images are missing, the website shows graceful visual fallbacks so the layout remains polished.
 
 ## Deploy on GitHub Pages
 

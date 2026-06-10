@@ -90,7 +90,6 @@ a {
 
 .brand-mark,
 .button-icon,
-.feature-icon,
 .step-number {
   display: inline-grid;
   place-items: center;
@@ -108,6 +107,26 @@ a {
   border-radius: 16px;
   box-shadow: var(--soft-shadow);
   font-size: 0.92rem;
+}
+
+.logo-mark {
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo-mark img.image-missing {
+  display: none;
+}
+
+.logo-mark:has(img.image-missing)::before {
+  content: "L";
 }
 
 .site-nav {
@@ -176,7 +195,7 @@ a {
 
 .hero {
   min-height: 780px;
-  padding: clamp(64px, 8vw, 106px) 0 76px;
+  padding: clamp(72px, 9vw, 118px) 0 78px;
 }
 
 .hero-grid {
@@ -224,7 +243,7 @@ h1 {
 
 .hero h1 {
   max-width: 680px;
-  font-size: clamp(3.2rem, 6.4vw, 6.35rem);
+  font-size: clamp(3.35rem, 6.4vw, 6.35rem);
 }
 
 h2 {
@@ -247,7 +266,7 @@ h3 {
 
 .hero-kicker {
   max-width: 560px;
-  margin: 22px 0 0;
+  margin: 24px 0 0;
   color: #fff8cc;
   font-size: clamp(1.05rem, 1.7vw, 1.26rem);
   font-weight: 900;
@@ -487,6 +506,62 @@ h3 {
   padding: clamp(68px, 8vw, 112px) 0;
 }
 
+.video-section {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(255, 212, 79, 0.28), transparent 22%),
+    linear-gradient(180deg, #fffdf5, #fff4c7);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1.28fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 74px);
+}
+
+.video-grid .section-heading {
+  margin-bottom: 0;
+}
+
+.video-grid .section-heading p:last-child {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.video-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(10px, 1.4vw, 16px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 223, 0.94)),
+    #fff;
+  border: 1px solid rgba(32, 48, 75, 0.1);
+  border-radius: 34px;
+  box-shadow: var(--shadow);
+}
+
+.video-card::before {
+  position: absolute;
+  top: -110px;
+  right: -90px;
+  width: 250px;
+  height: 250px;
+  content: "";
+  background: radial-gradient(circle, rgba(19, 166, 255, 0.2), transparent 68%);
+  border-radius: 50%;
+}
+
+.video-card video {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #17233b;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(23, 57, 102, 0.18);
+  object-fit: cover;
+}
+
 .split-section {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
@@ -608,38 +683,40 @@ h3 {
 
 .feature-card {
   min-height: 198px;
-  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.feature-card::before {
+  display: block;
+  width: 42px;
+  height: 5px;
+  margin-bottom: 22px;
+  content: "";
+  background: linear-gradient(90deg, var(--coral), var(--sun));
+  border-radius: 999px;
+}
+
+.feature-card:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--sky), var(--violet));
+}
+
+.feature-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--leaf), var(--sky));
+}
+
+.feature-card:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--sun), #ff9e3f);
+}
+
+.feature-card:nth-child(5)::before {
+  background: linear-gradient(90deg, var(--violet), var(--coral));
 }
 
 .feature-card:last-child {
   grid-column: 1 / -1;
-}
-
-.feature-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 18px;
-  color: #fff;
-  background: linear-gradient(135deg, #33c86b, #0f8fec);
-  border-radius: 17px;
-  font-weight: 900;
-}
-
-.feature-card:nth-child(2) .feature-icon {
-  background: linear-gradient(135deg, #ff7b62, #ffb545);
-}
-
-.feature-card:nth-child(3) .feature-icon {
-  background: linear-gradient(135deg, #8b6cff, #18b6ff);
-}
-
-.feature-card:nth-child(4) .feature-icon {
-  background: linear-gradient(135deg, #ffc83d, #ff7a55);
-}
-
-.feature-card:nth-child(5) .feature-icon {
-  background: linear-gradient(135deg, #24c98e, #ffd343);
 }
 
 .feature-card p,
@@ -889,6 +966,7 @@ h3 {
 
 @media (max-width: 1080px) {
   .hero-grid,
+  .video-grid,
   .feature-showcase {
     grid-template-columns: 1fr;
   }
@@ -955,7 +1033,7 @@ h3 {
   }
 
   .hero {
-    padding-top: 52px;
+    padding-top: 62px;
   }
 
   .hero-copy {
@@ -991,6 +1069,14 @@ h3 {
   .feature-card,
   .step-card {
     min-height: 0;
+  }
+
+  .video-card {
+    border-radius: 26px;
+  }
+
+  .video-card video {
+    border-radius: 18px;
   }
 
   .cta-panel,
